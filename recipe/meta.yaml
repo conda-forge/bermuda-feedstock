@@ -1,5 +1,5 @@
 {% set name = "bermuda" %}
-{% set version = "0.1.5" %}
+{% set version = "0.1.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bermuda-{{ version }}.tar.gz
-  sha256: 21b73bb1348b70d89dfeaaed449bbf2c2584638c1943806860cddbb989c051be
+  sha256: 0aec1408603798fe4c9aa1cbfc4c3adbc5a539fadf73d850601f9f8a124e5bb3
 
 build:
   script:

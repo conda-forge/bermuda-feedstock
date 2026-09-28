@@ -1,19 +1,19 @@
 {% set name = "bermuda" %}
-{% set version = "0.1.7" %}
+{% set version = "0.1.8" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bermuda-{{ version }}.tar.gz
-  sha256: a1a506e1425e099d405cb40f8d176260c594dd9bcc9cb97d24d674b93b660d74
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/bermuda-{{ version }}.tar.gz
+  sha256: 7630cfa422e57d4d66d0b4e5fbd769d5e96fec1900e0a606a3c8303de65c206e
 
 build:
   script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-  number: 2
+  number: 0
   ignore_run_exports:
     from_package:
       - cross-python_${{ target_platform }}  # [build_platform != target_platform]
